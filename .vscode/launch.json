@@ -1,0 +1,39 @@
+{
+    "configurations": [
+    {
+        "type": "dezog",
+        "request": "launch",
+        "name": "Internal Simulator",
+        "remoteType": "zsim",
+        "zsim": {
+            "visualMemory": true,
+            "memoryModel": "RAM",
+            "ulaScreen": true,
+            "zxBorderWidth": 20,
+            "vsyncInterrupt": true,
+            "zxKeyboard": true,
+            "zxBeeper": true
+        },
+        "sjasmplus": [
+            {
+                "path": "juc.sld"
+            }
+        ],
+        "commandsAfterLaunch": [
+            "-logpoint enable",
+            "-assertion enable",
+            "-wpmem enable"
+        ],
+        "history": {
+            "reverseDebugInstructionCount": 1000000,
+            "spotCount": 10,
+            "codeCoverageEnabled": true
+        },
+        "startAutomatically": false,
+        "rootFolder": "${workspaceFolder}",
+        "load": "juc.sna",
+        //"execAddress": "The start address / label name",
+        "topOfStack": "start"
+    }
+    ]
+}
